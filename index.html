@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="kk">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5f7f0">
+    <meta name="description" content="Yandex Object Storage-де статикалық веб-сайтты орналастыруға арналған зертханалық жоба.">
+    <title>Cloud Lab 04 — Статикалық сайтты орналастыру</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Негізгі мазмұнға өту</a>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Cloud Lab басты беті">
+        <span class="brand-mark" aria-hidden="true">C</span>
+        <span>CLOUD LAB <span class="brand-number">/ 04</span></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="menu-toggle-label">Мәзір</span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Негізгі навигация">
+        <a href="#workflow">Жұмыс барысы</a>
+        <a href="#endpoint">Endpoint тесті</a>
+        <a href="#questions">Сұрақтар</a>
+        <a class="nav-cta" href="#questions">Сұрақтарға өту <span aria-hidden="true">↓</span></a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="live-dot" aria-hidden="true"></span> ЗЕРТХАНАЛЫҚ ЖҰМЫС № 04</p>
+          <h1 id="hero-title">Сайт бұлтта.<br><span>Код өзіңде.</span></h1>
+          <p class="hero-intro">HTML, CSS және JavaScript файлдарын Yandex Object Storage-ге орналастырып, статикалық сайтыңды интернетке шығар.</p>
+          <a class="button button-dark" href="#workflow">Жұмысты бастау <span aria-hidden="true">↓</span></a>
+          <p class="hero-caption">OBJECT STORAGE <span>·</span> STATIC WEBSITE <span>·</span> YANDEX CLOUD</p>
+        </div>
+        <figure class="hero-visual">
+          <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1500&q=85" alt="Бұлттық сервистер жұмыс істейтін сервер сөрелері" fetchpriority="high">
+          <figcaption><span>01 / 04</span> Файлдардан ашық веб-сайтқа дейін</figcaption>
+          <span class="visual-stamp" aria-hidden="true">HTML<br>→<br>CLOUD</span>
+        </figure>
+      </section>
+
+      <section class="intro-strip" aria-label="Жобаның қысқаша сипаттамасы">
+        <p><span class="strip-index">A.</span> Бір Bucket</p>
+        <p><span class="strip-index">B.</span> Екі қате/негізгі бет</p>
+        <p><span class="strip-index">C.</span> Кез келген браузер</p>
+        <p class="strip-note">BACKEND ҚАЖЕТ ЕМЕС</p>
+      </section>
+
+      <section class="section workflow-section" id="workflow" aria-labelledby="workflow-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">DEPLOYMENT ПРОТОКОЛЫ</p>
+            <h2 id="workflow-title">Төрт қадам.<br>Бір ашық сайт.</h2>
+          </div>
+          <p class="section-summary">Әр кезеңді орындаған сайын белгіле. Прогресс осы браузерде автоматты түрде сақталады.</p>
+        </div>
+        <div class="progress-row" aria-live="polite">
+          <span id="progress-label">0 / 4 ҚАДАМ ОРЫНДАЛДЫ</span>
+          <div class="progress-track" role="progressbar" aria-label="Орындалған қадамдар" aria-valuemin="0" aria-valuemax="4" aria-valuenow="0" id="progress-bar"><span></span></div>
+          <span id="progress-percent">0%</span>
+        </div>
+        <ol class="workflow-list">
+          <li class="workflow-item">
+            <label class="step-check"><input type="checkbox" data-step="files"><span class="check-visual" aria-hidden="true"></span><span class="sr-only">Файлдарды дайындадым</span></label>
+            <span class="step-number">01</span>
+            <div class="step-copy"><h3>Файлдарды дайында</h3><p><code>index.html</code>, <code>error.html</code>, <code>styles.css</code> және <code>script.js</code> бір бумада тұрсын.</p></div>
+            <span class="step-tag">LOCAL</span>
+          </li>
+          <li class="workflow-item">
+            <label class="step-check"><input type="checkbox" data-step="bucket"><span class="check-visual" aria-hidden="true"></span><span class="sr-only">Bucket құрдым</span></label>
+            <span class="step-number">02</span>
+            <div class="step-copy"><h3>Bucket құр</h3><p>Бірегей атау таңда. Қоғамдық қолжетімділікте тек оқу құқығын аш, жазу мен жоюды шекте.</p></div>
+            <span class="step-tag">YANDEX CLOUD</span>
+          </li>
+          <li class="workflow-item">
+            <label class="step-check"><input type="checkbox" data-step="upload"><span class="check-visual" aria-hidden="true"></span><span class="sr-only">Файлдарды жүктедім</span></label>
+            <span class="step-number">03</span>
+            <div class="step-copy"><h3>Файлдарды жүкте</h3><p>Сайт файлдарын Bucket түбіріне жүкте. HTML-дегі файл жолдары дәл сәйкес екенін тексер.</p></div>
+            <span class="step-tag">UPLOAD</span>
+          </li>
+          <li class="workflow-item">
+            <label class="step-check"><input type="checkbox" data-step="hosting"><span class="check-visual" aria-hidden="true"></span><span class="sr-only">Hosting қосып, сайтты тексердім</span></label>
+            <span class="step-number">04</span>
+            <div class="step-copy"><h3>Hosting қосып, тексер</h3><p>Негізгі құжатқа <code>index.html</code>, қате бетіне <code>error.html</code> орнат та, Endpoint арқылы тексер.</p></div>
+            <span class="step-tag">LIVE</span>
+          </li>
+        </ol>
+      </section>
+
+      <section class="endpoint-section" id="endpoint" aria-labelledby="endpoint-title">
+        <div class="endpoint-copy">
+          <p class="eyebrow">СОҢҒЫ ТЕКСЕРІС</p>
+          <h2 id="endpoint-title">Endpoint-ті<br>осында тексер.</h2>
+          <p>Yandex Cloud консолінен нақты Website Endpoint-ті көшіріп, өріске қой. Бұл мысал мекенжай емес: өз Bucket-іңнің URL-ын қолдан.</p>
+          <label class="endpoint-label" for="endpoint-input">WEBSITE ENDPOINT URL</label>
+          <div class="endpoint-control">
+            <input id="endpoint-input" type="url" inputmode="url" autocomplete="url" placeholder="http://..." aria-describedby="endpoint-status">
+            <button class="button button-lime" id="open-endpoint" type="button">Сайтты ашу <span aria-hidden="true">↗</span></button>
+          </div>
+          <p class="endpoint-status" id="endpoint-status" aria-live="polite">Нақты Endpoint URL-ды енгіз.</p>
+          <button class="text-button" id="copy-endpoint" type="button">URL-ды көшіру</button>
+        </div>
+        <div class="endpoint-side">
+          <div class="endpoint-diagram" aria-label="Браузерден Bucket файлдарына сұраныс жолы">
+            <span>БРАУЗЕР</span><i aria-hidden="true">↓</i><span>WEBSITE ENDPOINT</span><i aria-hidden="true">↓</i><span class="diagram-bucket">BUCKET / OBJECTS</span>
+          </div>
+          <p>Жоқ бетке өтіп, сервердің <code>error.html</code> құжатын көрсететінін де тексер.</p>
+        </div>
+      </section>
+
+      <section class="section qa-section" id="questions" aria-labelledby="questions-title">
+        <div class="section-heading qa-heading">
+          <div><p class="eyebrow">ЕСЕПКЕ АРНАЛҒАН ҚЫСҚАША ЖАУАПТАР</p><h2 id="questions-title">Бақылау<br>сұрақтары.</h2></div>
+          <p class="section-summary">20 сұрақтың жауаптары. Толық нұсқа мен есепке арналған скриншот тізімі README файлында.</p>
+        </div>
+        <div class="question-list">
+          <details><summary><span>01</span> Object Storage дегеніміз не?</summary><p>Object Storage — деректерді объектілер түрінде сақтайтын, API арқылы файлдарды жүктеуге және алуға арналған бұлттық қызмет.</p></details>
+          <details><summary><span>02</span> Bucket дегеніміз не?</summary><p>Bucket — Object Storage ішіндегі объектілерді сақтайтын атауы бірегей контейнер.</p></details>
+          <details><summary><span>03</span> Object дегеніміз не?</summary><p>Object — Bucket ішінде сақталатын файл және оның метадеректері мен бірегей кілті.</p></details>
+          <details><summary><span>04</span> Object Storage статикалық сайтқа неге қолайлы?</summary><p>Дайын HTML, CSS, JavaScript және суреттерді серверді басқармай сақтап, HTTP арқылы таратады.</p></details>
+          <details><summary><span>05</span> Неге динамикалық кодты іске қоспайды?</summary><p>Object Storage файлдарды сақтап, береді, бірақ PHP, Python немесе Node.js бағдарламаларын орындамайды.</p></details>
+          <details><summary><span>06</span> Статикалық және динамикалық сайттың айырмасы қандай?</summary><p>Статикалық сайт алдын ала дайын файлдарды қайтарады; динамикалық сайт серверде сұранысқа қарай бет құрастырады.</p></details>
+          <details><summary><span>07</span> <code>index.html</code> не үшін керек?</summary><p>Ол сайттың негізгі құжаты; түбірлік адрес ашылғанда әдепкі бет ретінде беріледі.</p></details>
+          <details><summary><span>08</span> <code>error.html</code> не үшін керек?</summary><p>Сұралған объект табылмаған кезде көрсетілетін арнайы қате бетін анықтайды.</p></details>
+          <details><summary><span>09</span> Website Endpoint дегеніміз не?</summary><p>Endpoint — браузерден веб-сайтқа кіруге арналған, Bucket хостингі үшін берілетін мекенжай.</p></details>
+          <details><summary><span>10</span> Public Read Access дегеніміз не?</summary><p>Кез келген адам объектілерді оқи алады; жазу және жою құқығын көпшілікке ашпайды.</p></details>
+          <details><summary><span>11</span> Қоғамдық оқуда қандай қауіпсіздік тәуекелі бар?</summary><p>Жариялауға болмайтын файлдар да ашылып кетуі мүмкін. Құпияларды жүктемей, тек қажетті объектілерге оқу рұқсатын бер.</p></details>
+          <details><summary><span>12</span> Object Durability дегеніміз не?</summary><p>Durability — объектінің ұзақ уақыт сақталып, жоғалмай қалу ықтималдығын сипаттайтын көрсеткіш.</p></details>
+          <details><summary><span>13</span> Durability неліктен маңызды?</summary><p>Ол сақталған деректің жоғалу тәуекелін бағалауға және сақтау сенімділігі туралы шешім қабылдауға көмектеседі.</p></details>
+          <details><summary><span>14</span> Storage Class дегеніміз не?</summary><p>Storage Class — сақтау құны мен дерекке қол жеткізу сипаттарына әсер ететін сақтау класы.</p></details>
+          <details><summary><span>15</span> Сирек қолданылатын файлға арзан класс таңдаудың пайдасы?</summary><p>Қол жеткізу шарттары қолайлы болса, ұзақ сақталатын, сирек оқылатын деректердің құнын азайтады.</p></details>
+          <details><summary><span>16</span> Object Storage пен виртуалды машина қалай ерекшеленеді?</summary><p>Object Storage — файлдарды сақтау қызметі; виртуалды машина — операциялық жүйе мен бағдарламаларды іске қосатын есептеу ортасы.</p></details>
+          <details><summary><span>17</span> CSS жүктелмеуінің ықтимал себебі қандай?</summary><p>Файл жолы не атауы қате, объект жүктелмеген, рұқсат жабық немесе атаудың үлкен-кішілігі сәйкес емес болуы мүмкін.</p></details>
+          <details><summary><span>18</span> Неге негізгі және қате беттер бөлек беріледі?</summary><p>Хостингке табысты сұраныстың әдепкі құжаты мен қате сұранысының құжатын жеке тағайындау қажет.</p></details>
+          <details><summary><span>19</span> Object Storage-дің статикалық сайтқа артықшылығы қандай?</summary><p>Қарапайым орналастыру, серверді басқармау, файлдарды масштабты түрде тарату және шығынды оңтайландыру.</p></details>
+          <details><summary><span>20</span> Сайт жұмысын қалай тексеруге болады?</summary><p>Endpoint-ті ашып, негізгі бет, CSS, суреттер, JavaScript және жоқ мекенжайдағы error page нәтижесін тексер.</p></details>
+        </div>
+      </section>
+
+      <section class="closing-band" aria-label="Жоба нәтижесі">
+        <div><p class="eyebrow">КЕЛЕСІ ҚАДАМ</p><h2>Скриншоттарды жина.<br><span>Есепті аяқта.</span></h2></div>
+        <a class="button button-dark" href="#questions">Сұрақтарға өту <span aria-hidden="true">↓</span></a>
+      </section>
+    </main>
+
+    <footer class="site-footer"><a class="brand" href="#top"><span class="brand-mark" aria-hidden="true">C</span><span>CLOUD LAB <span class="brand-number">/ 04</span></span></a><p>СТАТИКАЛЫҚ ВЕБ-САЙТ · YANDEX OBJECT STORAGE</p><a href="#top">БЕТ БАСЫНА ↑</a></footer>
+  </body>
+</html>
